@@ -22,7 +22,7 @@ app.get('/7', (req, res) => {
     }, timeout * 1000);
 });
 
-app.get('/api/7/envelope', (req, res) => {
+app.get('/7/envelope', (req, res) => {
     // Return an empty array
     const responseData = [];
 
