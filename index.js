@@ -22,6 +22,13 @@ app.get('/7', (req, res) => {
     }, timeout * 1000);
 });
 
+app.get('/api/7/envelope', (req, res) => {
+    // Return an empty array
+    const responseData = [];
+
+    res.json(responseData);
+});
+
 // Start the server
 app.listen(port, () => {
     console.log(`Mock server running at http://localhost:${port}`);
