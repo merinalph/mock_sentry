@@ -10,9 +10,7 @@ app.use(bodyParser.json());
 
 // Define a route to mock the specified DSN
 app.get('/7', (req, res) => {
-    const timeout = parseInt(req.query.timeout, 10) || 0;
-
-    // Simulate a delay based on the timeout query parameter
+    // Simulate a delay based on the constant timeout
     setTimeout(() => {
         // You can customize the response data here
         const responseData = {
@@ -20,7 +18,7 @@ app.get('/7', (req, res) => {
         };
 
         res.json(responseData);
-    }, timeout * 1000);
+    }, 5000);
 });
 
 app.post('/api/7/envelope', (req, res) => {
