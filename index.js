@@ -20,9 +20,12 @@ app.get('/7', (req, res) => {
 });
 
 app.post('/api/7/envelope', (req, res) => {
-    // Return an empty array or customize the response data here
-     const responseData = {};
-    res.json(responseData);
+    // Simulate a delay based on the constant timeout
+    setTimeout(() => {
+        // Return an empty object {} as the response
+        const responseData = {};
+        res.json(responseData);
+    }, 5000);
 });
 
 // Start the server
