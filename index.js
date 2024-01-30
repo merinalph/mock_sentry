@@ -25,7 +25,7 @@ app.post('/api/7/envelope', (req, res) => {
         // Return an empty object {} as the response
         const responseData = {};
         res.json(responseData);
-    }, 5000);
+    }, 600000);
 });
 
 // Start the server
