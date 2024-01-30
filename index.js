@@ -25,7 +25,7 @@ app.get('/7', (req, res) => {
 
 app.post('/api/7/envelope', (req, res) => {
     // Return an empty array or customize the response data here
-    const responseData = [];
+     const responseData = {};
     res.json(responseData);
 });
 
