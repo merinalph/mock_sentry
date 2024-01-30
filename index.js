@@ -1,10 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 6000;
 const bodyParser = require('body-parser');
 
 
-
+app.use(cors());
 app.use(bodyParser.json());
 
 // Define a route to mock the specified DSN
