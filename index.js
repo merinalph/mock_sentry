@@ -13,9 +13,7 @@ app.get('/7', (req, res) => {
     // Simulate a delay based on the constant timeout
     setTimeout(() => {
         // You can customize the response data here
-        const responseData = {
-            message: `Mock response for ${req.originalUrl}`,
-        };
+        const responseData = {};
 
         res.json(responseData);
     }, 5000);
