@@ -23,7 +23,7 @@ app.get('/7', (req, res) => {
     }, timeout * 1000);
 });
 
-app.post('/7/envelope', (req, res) => {
+app.post('/api/7/envelope', (req, res) => {
     // Return an empty array or customize the response data here
     const responseData = [];
     res.json(responseData);
