@@ -1,26 +1,29 @@
 const express = require('express');
 const app = express();
-const port = 5000;
+const cors = require('cors'); // Add this line
+const port = 6000;
+const bodyParser = require('body-parser');
 
-app.get('/', (req, res) => {
-    // Wait for 10 seconds
+
+
+app.use(bodyParser.json());
+
+// Define a route to mock the specified DSN
+app.get('/7', (req, res) => {
+    const timeout = parseInt(req.query.timeout, 10) || 0;
+
+    // Simulate a delay based on the timeout query parameter
     setTimeout(() => {
-        console.log('Response sent');
-        res.send('You got a response!');
-    }, 50000);
+        // You can customize the response data here
+        const responseData = {
+            message: `Mock response for ${req.originalUrl}`,
+        };
+
+        res.json(responseData);
+    }, timeout * 1000);
 });
 
-
-
-// Set up a route that times out after 30 seconds
-app.get('/30', (req, res) => {
-    setTimeout(() => {
-        res.send('Response after 30 seconds');
-    }, 30000);
-});
-
-
-
+// Start the server
 app.listen(port, () => {
-    console.log(`Mock Sentry server is listening at http://localhost:${port}`)
+    console.log(`Mock server running at http://localhost:${port}`);
 });
